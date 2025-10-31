@@ -106,7 +106,7 @@ function getUrlVars(rawUrl) {
     return vars;
 }
 
-var Gkey = "AIzaSyCSrF08UMawxKIb0m4JsA1mYE5NMmP36bY";
+var Gkey = "AIzaSyAAtH3-kMK6fbvFLRCc4xAh96HHbYlbEso";
 var BitlyKey = "52e99e2d788d32ae8ea99007d96917ac4ba50a5a";
 
 function prepareGFolder(folderLink) {
