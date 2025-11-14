@@ -211,6 +211,7 @@
 
     function showStillLink() {
 
+        var appName = 'design-explorer';
         var studyCaseLink = encodeUrl(_folderInfo.inLink);
         var studyEncodedUrl = "";
 
@@ -222,7 +223,7 @@
 
         }else if (_folderInfo.DE_PW.length>0){
             // if _folderInfo.DE_PW existed, just return.
-            studyEncodedUrl = document.location.origin + "/DesignExplorer/?ID=" + _folderInfo.DE_PW; 
+            studyEncodedUrl = `${document.location.origin}/${appName}/?ID=${_folderInfo.DE_PW}`; 
             d3.select("#showShortUrl").html("https://goo.gl/" +_folderInfo.DE_PW);
             d3.select("#myStudyID").html(studyEncodedUrl); 
             $("#showStillLink").modal();
@@ -231,7 +232,7 @@
         }
 
         //valid online folder available
-        var studyLongUrl = document.location.origin +"/DesignExplorer/?ID="+ studyCaseLink;
+        var studyLongUrl = `${document.location.origin}/${appName}/?ID=${studyCaseLink}`;
         d3.select("#welcome").style("display","none");
         
         
@@ -241,11 +242,11 @@
 
             if(UrlId.length ==6){ // google url id
                 
-                studyEncodedUrl = document.location.origin +"/DesignExplorer/?ID="+_folderInfo.DE_PW;
+                studyEncodedUrl = `${document.location.origin}/${appName}/?ID=${_folderInfo.DE_PW}`;
                 d3.select("#showShortUrl").html("https://goo.gl/"+ _folderInfo.DE_PW);
 
             }else if(UrlId.startsWith("BL_")){
-                studyEncodedUrl = document.location.origin +"/DesignExplorer/?ID="+_folderInfo.DE_PW;
+                studyEncodedUrl = `${document.location.origin}/${appName}/?ID=${_folderInfo.DE_PW}`;
                 d3.select("#showShortUrl").html("https://bit.ly/"+ _folderInfo.DE_PW.replace("BL_",""));
             }else{
                 studyEncodedUrl = studyLongUrl;
